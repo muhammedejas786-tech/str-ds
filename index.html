@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Design Suite — structural detailing &amp; design software</title>
-<meta name="description" content="Design Suite reads your ETABS or SAFE model and produces buildable beam and column detailing, 22 design checks, schedules and calculation reports — from one import, in your own document.">
+<title>Design Suite: structural detailing and design software</title>
+<meta name="description" content="Design Suite reads your ETABS or SAFE model and produces buildable beam and column detailing, 22 design checks, schedules and calculation reports, all from one import, in your own document.">
 <meta name="theme-color" content="#17364F">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='58' fill='%232A5C86'/%3E%3Cg fill='%23E9EDF2'%3E%3Crect x='109' y='97' width='293' height='44'/%3E%3Crect x='109' y='97' width='44' height='356'/%3E%3Crect x='358' y='97' width='44' height='356'/%3E%3Crect x='89' y='427' width='83' height='26'/%3E%3Crect x='339' y='427' width='83' height='26'/%3E%3Cpath d='M152 141 L178 141 L382 453 L356 453 Z'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -244,6 +244,12 @@ img,svg{display:block;max-width:100%}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .about-list li::before{border-color:var(--blue)}}
 :root[data-theme="dark"] .about-list li::before{border-color:var(--blue)}
 .about-list b{color:var(--ink);font-weight:600}
+.byline{margin-top:28px;font-size:14px;color:var(--ink-faint)}
+.devlink{color:var(--blue-deep);font-weight:600;text-decoration:none;border-bottom:1px solid var(--blue-line);
+  padding-bottom:1px;display:inline-flex;align-items:center;gap:5px}
+.devlink:hover{color:var(--blue);border-color:var(--blue)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .devlink{color:var(--blue)}}
+:root[data-theme="dark"] .devlink{color:var(--blue)}
 
 /* ---------- download band — full-bleed, no rounded gradient card ---------- */
 .ctaBand{background:var(--blue-deep);border-top:1px solid rgb(255 255 255 / .12);border-bottom:1px solid rgb(255 255 255 / .12);
@@ -255,6 +261,15 @@ img,svg{display:block;max-width:100%}
 .cta-inner h2{color:#fff}
 .cta-inner p{color:#D6E3EC;max-width:560px;margin:16px auto 0;font-size:16.5px;line-height:1.7}
 .cta-inner .row{justify-content:center;margin-top:30px}
+.cta-inner .note{margin-top:18px;font-size:13px;color:#AFC3D2;max-width:none}
+.cta-inner .note a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+
+/* ---------- beta tag ---------- */
+.betatag{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--rebar);background:rgb(178 58 46 / .09);border:1px solid var(--rebar);border-radius:2px;
+  padding:3px 8px;display:inline-block;flex:0 0 auto}
+@media(max-width:480px){.betatag-nav{display:none}}
+.betatag-onbrand{color:#F4B3A9;background:rgb(255 255 255 / .08);border-color:#F4B3A9}
 
 /* ---------- footer ---------- */
 footer{background:var(--paper-sunken);color:var(--ink-soft);padding:44px 0;border-top:1px solid var(--line)}
@@ -299,6 +314,7 @@ footer{background:var(--paper-sunken);color:var(--ink-soft);padding:44px 0;borde
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 5-5m-5 5-5-5"/><path d="M4 20h16"/></svg>
         Download
       </a>
+      <span class="betatag betatag-nav">Beta</span>
       <button class="burger" id="burger" aria-expanded="false" aria-controls="mobilemenu" aria-label="Open menu">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
@@ -322,13 +338,14 @@ footer{background:var(--paper-sunken);color:var(--ink-soft);padding:44px 0;borde
       <p class="eyebrow">For ETABS + SAFE</p>
       <h1 class="h1">Detail every beam and column in minutes, not days.</h1>
       <p class="lead">Design Suite reads your ETABS or SAFE model and produces buildable beam and column
-        detailing, 22 design checks, schedules, layout plans and calculation reports — then pushes the
-        detailing back into ETABS, Revit and CAD. Your logo on every page; nothing leaves your machine.</p>
+        detailing, 22 design checks, schedules, layout plans and calculation reports, then pushes the
+        detailing back into ETABS, Revit and CAD. Your logo on every page. Nothing leaves your machine.</p>
       <div class="row" style="margin-top:30px">
         <a class="btn btn-primary" href="#download">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 5-5m-5 5-5-5"/><path d="M4 20h16"/></svg>
           Download for Windows
         </a>
+        <span class="betatag">Beta</span>
         <a class="btn btn-ghost" href="#modules">View all modules</a>
       </div>
       <div class="tickrow">
@@ -339,7 +356,7 @@ footer{background:var(--paper-sunken);color:var(--ink-soft);padding:44px 0;borde
     </div>
 
     <div class="dwgcard" aria-hidden="true">
-      <div class="dwghead"><span>Detail 03 / S-201</span><b>Corner joint — beam / column</b></div>
+      <div class="dwghead"><span>Detail 03 / S-201</span><b>Corner joint: beam / column</b></div>
       <div class="dwgbody">
         <svg class="heroDwg" viewBox="0 0 440 400" role="img" aria-label="Animated detail drawing of a beam-column corner joint showing reinforcement, dimensions and the bending moment diagram">
           <defs>
@@ -404,9 +421,9 @@ footer{background:var(--paper-sunken);color:var(--ink-soft);padding:44px 0;borde
 <section class="container" style="padding-top:56px">
   <div class="stats rv">
     <div class="stat"><b>22</b><span>Calculation modules sharing one import</span></div>
-    <div class="stat"><b>4</b><span>Export formats — PDF, DXF, Revit, Excel</span></div>
-    <div class="stat"><b>2</b><span>Code families — ACI 318 and SBC 304 / 301</span></div>
-    <div class="stat"><b>1</b><span>Model in — every deliverable reads it</span></div>
+    <div class="stat"><b>4</b><span>Export formats: PDF, DXF, Revit, Excel</span></div>
+    <div class="stat"><b>2</b><span>Code families: ACI 318 and SBC 304 / 301</span></div>
+    <div class="stat"><b>1</b><span>One model, every deliverable reads it</span></div>
   </div>
 </section>
 
@@ -414,15 +431,14 @@ footer{background:var(--paper-sunken);color:var(--ink-soft);padding:44px 0;borde
   <div class="container">
     <p class="eyebrow">Modules</p>
     <h2 class="h2">Detailing, plus every check you repeat on a job</h2>
-    <p class="lead">Twenty-two modules, one import, one house standard. Hover or tab onto a card to pause and
-      read; each carries its own code reference.</p>
+    <p class="lead">Twenty-two modules, one import, one house standard.</p>
   </div>
 
   <div class="marquee-bleed rv" style="margin-top:40px">
     <div class="marquee">
       <div class="marquee-track">
         <div class="mtrack-set">
-          <div class="mchip" tabindex="0" title="ETABS import to bar arrangement, schedule and typical detail — least steel found inside your own house rules.">
+          <div class="mchip" tabindex="0" title="ETABS import to bar arrangement, schedule and typical detail. Least steel found inside your own house rules.">
             <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M3 17h18M7 7v10M12 7v10M17 7v10"/></svg></span>
             <span class="mtext"><span class="mname">Automated Beam Detailing</span><span class="mref">ACI 318 Ch. 9</span></span>
             <span class="mk">BD</span>
@@ -437,7 +453,7 @@ footer{background:var(--paper-sunken);color:var(--ink-soft);padding:44px 0;borde
             <span class="mtext"><span class="mname">Beam Deflection</span><span class="mref">ACI 318 24.2</span></span>
             <span class="mk">DF</span>
           </div>
-          <div class="mchip" tabindex="0" title="Moment magnifier — all three EI equations checked, the smallest valid delta_ns governs.">
+          <div class="mchip" tabindex="0" title="Moment magnifier. All three EI equations checked, the smallest valid delta_ns governs.">
             <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M9 21h6"/><path d="M12 3c-3 4-3 14 0 18"/></svg></span>
             <span class="mtext"><span class="mname">Column Slenderness</span><span class="mref">ACI 318 6.6.4</span></span>
             <span class="mk">CS</span>
@@ -556,7 +572,7 @@ footer{background:var(--paper-sunken);color:var(--ink-soft);padding:44px 0;borde
             <span class="mtext"><span class="mname">Pile Design</span><span class="mref">ACI 318</span></span>
             <span class="mk">PD</span>
           </div>
-          <div class="mchip" tabindex="0" title="Strut-and-tie and beam theory both checked — the governing case is reported.">
+          <div class="mchip" tabindex="0" title="Strut-and-tie and beam theory both checked. The governing case is reported.">
             <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="6" width="14" height="5"/><path d="M9 11v9M15 11v9"/></svg></span>
             <span class="mtext"><span class="mname">Pile Cap Design</span><span class="mref">ACI 318 13.2 / 23.4</span></span>
             <span class="mk">PC</span>
@@ -670,14 +686,14 @@ footer{background:var(--paper-sunken);color:var(--ink-soft);padding:44px 0;borde
         <span class="tag">01</span>
         <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"/><path d="M3 6h18"/><path d="m7 22-4-4 4-4"/><path d="M21 18H3"/></svg></span>
         <h3>Back into ETABS</h3>
-        <p>Column detailing writes back as one section property per mark, complete with its rebar — set to
+        <p>Column detailing writes back as one section property per mark, complete with its rebar. Set to
           check your bars rather than redesign them.</p>
       </div>
       <div class="icard">
         <span class="tag">02</span>
         <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 9 5-9 5-9-5 9-5z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/></svg></span>
         <h3>Into Revit</h3>
-        <p>The detailing schedule exports as native detail lines, text notes and placed families —
+        <p>The detailing schedule exports as native detail lines, text notes and placed families,
           editable, taggable and schedulable.</p>
       </div>
       <div class="icard">
@@ -696,23 +712,25 @@ footer{background:var(--paper-sunken);color:var(--ink-soft);padding:44px 0;borde
     <p class="eyebrow">About</p>
     <h2 class="h2">Built by an engineer, for engineers</h2>
     <p class="lead">Design Suite grew out of real drawings, real review comments and real issued
-      calculation reports — not a generic template. Every rule in it, from bar spacing to how a column
+      calculation reports, not a generic template. Every rule in it, from bar spacing to how a column
       mark groups up a building, came from an actual project, checked against an actual issued report.</p>
     <ul class="about-list">
       <li><b>Manually verifiable.</b> Every module opens a formatted, line-by-line derivation with clause
-        references — nothing is a black box.</li>
+        references. Nothing is a black box.</li>
       <li><b>Your rules win.</b> A hand-typed call-out is always applied and re-derived through the whole
         schedule, with anything it breaches reported, never silently undone.</li>
       <li><b>It leaves as your document.</b> Your own logo and title block on every report, and the model,
         the detailing and the reports never leave your machine.</li>
     </ul>
+    <p class="byline">Developed by <a class="devlink" href="https://muhammedejas786-tech.github.io/mohdejas.com/" target="_blank" rel="noopener noreferrer">Eng. Muhammed Ejas
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a></p>
   </div>
 </section>
 
 <section id="download" class="ctaBand">
   <div class="container cta-inner rv">
     <h2 class="h2">Get Design Suite</h2>
-    <p>Download the installer and run it on your own model — every number in the report checks by hand.
+    <p>Download the installer and run it on your own model. Every number in the report checks by hand.
       No cloud processing, nothing uploaded.</p>
     <div class="row">
       <!-- TODO: point this at your Google Drive share link (file shared as "Anyone with the
@@ -723,8 +741,10 @@ footer{background:var(--paper-sunken);color:var(--ink-soft);padding:44px 0;borde
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 5-5m-5 5-5-5"/><path d="M4 20h16"/></svg>
         Download for Windows
       </a>
-      <a class="btn btn-onbrand" href="mailto:you@yourdomain.com?subject=Design%20Suite%20question">Questions? Email us</a>
+      <span class="betatag betatag-onbrand">Beta</span>
+      <a class="btn btn-onbrand" href="mailto:ejas6772@gmail.com?subject=Design%20Suite%20question">Questions? Email us</a>
     </div>
+    <p class="note">By downloading, you accept the <a href="terms.html">Terms and Conditions</a>.</p>
   </div>
 </section>
 
@@ -751,6 +771,7 @@ footer{background:var(--paper-sunken);color:var(--ink-soft);padding:44px 0;borde
         <a href="#integration">Integration</a>
         <a href="#about">About</a>
         <a href="#download">Download</a>
+        <a href="terms.html">Terms</a>
       </nav>
     </div>
     <div class="fbot">
